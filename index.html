@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>The Toolbox — Free Online &amp; AI Tools, All In One Place</title>
+<meta name="description" content="A curated toolbox of free online tools — AI, PDF, image, writing and utility — no signup, updated for 2026."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F1EEE3;
+  --dot:rgba(27,27,30,.10);
+  --panel:#FFFFFF;
+  --ink:#1B1B1E;
+  --ink-soft:#68655C;
+  --ink-faint:#9C9788;
+  --border:#DCD5C2;
+  --border-dark:#C7BEA4;
+  --orange:#FF5A1F;
+  --orange-ink:#B23E11;
+  --steel:#2F6FED;
+  --green:#1F9D55;
+  --purple:#7C5CFC;
+  --slate:#4B5563;
+  --card-shadow:0 1px 0 rgba(27,27,30,.04), 0 10px 24px rgba(27,27,30,.06);
+  --card-shadow-hover:0 2px 0 rgba(27,27,30,.05), 0 22px 40px rgba(27,27,30,.14);
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:
+    radial-gradient(circle, var(--dot) 1.4px, transparent 1.6px) 0 0/24px 24px,
+    var(--bg);
+  color:var(--ink);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:'JetBrains Mono',monospace;}
+.display{font-family:'Space Grotesk',sans-serif;}
+a{color:inherit;}
+button{font-family:inherit;}
+
+/* ===== reduced motion ===== */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important;}
+}
+
+/* ===== container ===== */
+.container{max-width:1220px;margin:0 auto;padding:0 22px;}
+
+/* ===== header ===== */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(241,238,227,.88);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:2px solid var(--ink);
+}
+.header-inner{display:flex;align-items:center;gap:18px;padding:16px 0;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.logo-mark{
+  width:38px;height:38px;border-radius:9px;
+  background:var(--ink);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-size:19px;flex-shrink:0;
+  box-shadow:2px 2px 0 var(--orange);
+  transform:rotate(-3deg);
+}
+.logo-text{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;}
+.logo-text .hi{color:var(--orange);}
+.header-search{flex:1;max-width:420px;position:relative;}
+.header-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-faint);pointer-events:none;width:16px;height:16px;}
+.header-search input{
+  width:100%;padding:10px 14px 10px 40px;
+  background:var(--panel);border:2px solid var(--ink);border-radius:9px;
+  color:var(--ink);font-size:14px;font-family:'Inter',sans-serif;outline:none;
+  box-shadow:2px 2px 0 var(--border-dark);transition:.15s;
+}
+.header-search input:focus{box-shadow:2px 2px 0 var(--orange);border-color:var(--orange);}
+.header-search input::placeholder{color:var(--ink-faint);}
+.header-badge{
+  display:flex;align-items:center;gap:7px;flex-shrink:0;
+  background:var(--ink);color:var(--bg);
+  border-radius:100px;padding:8px 15px;font-size:12px;font-weight:600;white-space:nowrap;
+}
+.header-badge .pulse{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+/* ===== hero ===== */
+.hero{padding:74px 0 56px;text-align:center;position:relative;overflow:hidden;}
+.peg{
+  position:absolute;display:flex;flex-direction:column;align-items:center;
+  animation:sway 5s ease-in-out infinite;
+  opacity:.9;
+}
+.peg .hook{width:2px;height:26px;background:var(--border-dark);}
+.peg .chip{
+  width:56px;height:56px;border-radius:12px;background:var(--panel);
+  border:2px solid var(--ink);box-shadow:3px 3px 0 var(--border-dark);
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+}
+.peg1{top:6%;left:6%;animation-delay:0s;}
+.peg2{top:18%;right:9%;animation-delay:-1.6s;}
+.peg3{bottom:8%;left:13%;animation-delay:-3s;}
+.peg4{bottom:2%;right:16%;animation-delay:-.8s;}
+@keyframes sway{0%,100%{transform:rotate(-5deg) translateY(0);}50%{transform:rotate(5deg) translateY(-8px);}}
+@media(max-width:900px){.peg{display:none;}}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--panel);border:2px solid var(--ink);border-radius:100px;
+  padding:6px 16px 6px 6px;font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.2px;margin-bottom:30px;
+  box-shadow:2px 2px 0 var(--ink);animation:fadeUp .6s both;
+}
+.hero-eyebrow .tag{background:var(--orange);color:#fff;border-radius:100px;padding:4px 10px;font-size:11px;}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:clamp(2.6rem,6.4vw,4.6rem);line-height:1.04;letter-spacing:-.03em;
+  margin-bottom:20px;animation:fadeUp .6s .08s both;
+}
+.hero h1 .u{position:relative;white-space:nowrap;}
+.hero h1 .u::after{
+  content:'';position:absolute;left:-2%;right:-2%;bottom:6px;height:14px;
+  background:var(--orange);opacity:.35;z-index:-1;transform:skewX(-8deg);
+}
+.hero-sub{color:var(--ink-soft);font-size:1.08rem;max-width:520px;margin:0 auto 36px;line-height:1.65;animation:fadeUp .6s .16s both;}
+.hero-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;animation:fadeUp .6s .24s both;}
+.stat{
+  display:flex;align-items:center;gap:8px;background:var(--panel);
+  border:2px solid var(--ink);border-radius:100px;padding:9px 18px;font-size:13px;
+  box-shadow:2px 2px 0 var(--border-dark);transition:.15s;
+}
+.stat:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--orange);}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--orange-ink);font-size:15px;}
+.stat-label{color:var(--ink-soft);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+
+/* ===== tabs ===== */
+.tab-wrap{
+  position:sticky;top:73px;z-index:90;padding:26px 0 0;margin-bottom:38px;
+  background:rgba(241,238,227,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--ink);
+}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:0 0 16px;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{
+  display:flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap;cursor:pointer;
+  background:var(--panel);border:2px solid var(--ink);border-radius:9px;
+  padding:9px 16px;font-size:13px;font-weight:600;color:var(--ink);
+  box-shadow:2px 2px 0 var(--border-dark);transition:.15s;
+}
+.tab:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--border-dark);}
+.tab.active{background:var(--ink);color:var(--bg);box-shadow:2px 2px 0 var(--orange);}
+.tab-count{
+  background:rgba(0,0,0,.06);border-radius:6px;padding:1px 7px;font-size:11px;font-weight:700;
+  font-family:'JetBrains Mono',monospace;
+}
+.tab.active .tab-count{background:rgba(255,255,255,.16);color:var(--bg);}
+
+/* ===== section head ===== */
+.section-head{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:6px 0 2px;}
+.section-head h2{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;}
+.section-line{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--border-dark) 0 8px,transparent 8px 14px);}
+.section-tag{
+  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.2px;padding:4px 10px;border-radius:5px;color:#fff;
+}
+.section-tag.ai{background:var(--orange);}
+.section-tag.convert{background:var(--steel);}
+.section-tag.compress{background:var(--green);}
+.section-tag.edit{background:var(--purple);}
+.section-tag.utility{background:var(--slate);}
+
+/* ===== grid & cards ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px 16px;padding-bottom:60px;}
+
+.card{
+  position:relative;background:var(--panel);border:2px solid var(--ink);border-radius:14px;
+  cursor:pointer;overflow:visible;
+  box-shadow:var(--card-shadow);
+  opacity:0;transform:translateY(18px) rotate(var(--r,0deg));
+}
+.card.visible{
+  opacity:1;transform:translateY(0) rotate(var(--r,0deg));
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s ease,box-shadow .2s;
+}
+.card:nth-child(4n+1){--r:-.6deg;}
+.card:nth-child(4n+2){--r:.5deg;}
+.card:nth-child(4n+3){--r:-.3deg;}
+.card:nth-child(4n+4){--r:.7deg;}
+.card:hover{transform:translateY(-4px) rotate(0deg);box-shadow:var(--card-shadow-hover);z-index:2;}
+.card.open{border-color:var(--orange);transform:translateY(-4px) rotate(0deg);box-shadow:0 0 0 3px rgba(255,90,31,.14),var(--card-shadow-hover);z-index:3;}
+
+.peg-hole{
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  width:22px;height:22px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--ink);
+}
+.peg-hole::after{
+  content:'';position:absolute;inset:5px;border-radius:50%;background:var(--border-dark);
+}
+
+.card-top{display:flex;align-items:center;gap:14px;padding:22px 18px 16px;}
+.card-icon-wrap{position:relative;flex-shrink:0;}
+.card-icon{
+  width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  font-size:21px;border:2px solid var(--ink);background:var(--bg);
+}
+.badge{
+  position:absolute;top:-8px;right:-10px;font-family:'JetBrains Mono',monospace;
+  font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;
+  padding:2px 6px;border-radius:100px;line-height:1.6;border:1.5px solid var(--ink);
+}
+.badge-new{background:var(--green);color:#fff;}
+.badge-hot{background:var(--orange);color:#fff;}
+
+.card-info{flex:1;min-width:0;}
+.card-title{font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:700;margin-bottom:3px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.card-desc{font-size:12px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.card-tag{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.8px;padding:4px 9px;border-radius:6px;flex-shrink:0;color:#fff;}
+.tag-ai{background:var(--orange);}
+.tag-convert{background:var(--steel);}
+.tag-compress{background:var(--green);}
+.tag-edit{background:var(--purple);}
+.tag-utility{background:var(--slate);}
+
+.card-arrow{
+  width:28px;height:28px;border-radius:8px;background:var(--bg);border:2px solid var(--ink);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.25s;font-size:12px;
+}
+.card.open .card-arrow{background:var(--orange);border-color:var(--orange);color:#fff;transform:rotate(180deg);}
+
+.card-divider{height:2px;margin:0 18px;background:repeating-linear-gradient(90deg,var(--border) 0 6px,transparent 6px 11px);}
+
+.card-links{display:none;flex-direction:column;gap:2px;padding:10px 10px 14px;}
+.card.open .card-links{display:flex;}
+.card-links a{
+  display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:8px;text-decoration:none;
+  color:var(--ink-soft);font-size:13px;font-weight:500;transition:.12s;min-height:40px;
+}
+.card-links a:hover{background:rgba(255,90,31,.08);color:var(--orange-ink);padding-left:16px;}
+.link-dot{width:6px;height:6px;border-radius:1px;background:var(--border-dark);flex-shrink:0;transform:rotate(45deg);}
+.card-links a:hover .link-dot{background:var(--orange);}
+.link-arrow{margin-left:auto;opacity:0;font-size:12px;transition:.12s;color:var(--orange-ink);}
+.card-links a:hover .link-arrow{opacity:1;}
+
+/* ===== empty state ===== */
+.empty{display:none;grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--ink-soft);}
+.empty.show{display:block;}
+.empty-icon{font-size:44px;margin-bottom:14px;opacity:.5;}
+.empty p{font-size:1.05rem;}
+
+/* ===== share section ===== */
+.share-section{
+  margin:0 0 60px;background:var(--ink);color:var(--bg);border-radius:22px;
+  padding:50px 40px;text-align:center;position:relative;overflow:hidden;
+  border:2px solid var(--ink);box-shadow:5px 5px 0 var(--orange);
+}
+.share-label{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
+  border:1.5px solid rgba(255,255,255,.2);border-radius:100px;padding:6px 16px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.4px;color:var(--orange);margin-bottom:18px;
+}
+.share-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin-bottom:10px;}
+.share-sub{color:#B9B6AC;font-size:14.5px;margin-bottom:28px;line-height:1.6;}
+.share-total{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,90,31,.14);
+  border:1.5px solid rgba(255,90,31,.35);border-radius:100px;padding:8px 20px;margin-bottom:30px;
+  font-size:13.5px;font-weight:600;color:#FF8D5C;
+}
+.fire{animation:fireAnim 1.2s infinite;}
+@keyframes fireAnim{0%,100%{transform:scale(1);}50%{transform:scale(1.2) rotate(5deg);}}
+.share-btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;}
+.share-btn{
+  display:flex;align-items:center;gap:10px;padding:12px 15px;border-radius:11px;
+  border:1.5px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:#fff;
+  font-size:13px;font-weight:600;cursor:pointer;transition:.15s;text-align:left;min-height:46px;
+}
+.share-btn:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.3);}
+.share-btn:active{transform:scale(.97);}
+.share-btn-icon{width:28px;height:28px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.share-btn-name{flex:1;}
+.share-cnt{background:rgba(255,255,255,.1);border-radius:6px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#B9B6AC;min-width:34px;text-align:center;transition:.2s;}
+@keyframes pop{0%{transform:scale(1);}40%{transform:scale(.94);}70%{transform:scale(1.07);}100%{transform:scale(1);}}
+.popping{animation:pop .3s ease;}
+
+/* ===== footer ===== */
+footer{border-top:2px solid var(--ink);padding:28px 0;text-align:center;color:var(--ink-soft);font-size:13px;}
+footer strong{color:var(--ink);}
+
+/* ===== responsive ===== */
+@media(max-width:768px){
+  .header-search{display:none;}
+  .hero{padding:44px 0 36px;}
+  .hero h1{font-size:clamp(2.1rem,8.6vw,3.2rem);}
+  .tab-wrap{top:64px;}
+  .grid{grid-template-columns:1fr;gap:20px;}
+  .card-tag{display:none;}
+  .share-section{padding:32px 20px;border-radius:18px;}
+  .share-btns{grid-template-columns:repeat(2,1fr);gap:9px;}
+  .mobile-search{display:flex;padding:12px 0 0;}
+  .mobile-search-wrap{position:relative;width:100%;}
+  .mobile-search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-faint);pointer-events:none;width:16px;height:16px;}
+  .mobile-search input{
+    width:100%;padding:12px 14px 12px 42px;background:var(--panel);border:2px solid var(--ink);
+    border-radius:10px;color:var(--ink);font-size:14px;font-family:'Inter',sans-serif;outline:none;
+    box-shadow:2px 2px 0 var(--border-dark);
+  }
+}
+@media(min-width:769px){.mobile-search{display:none;}}
+@media(max-width:480px){.share-btns{grid-template-columns:1fr;}.hero-stats .stat:nth-child(n+3){display:none;}}
+@media(min-width:600px) and (max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(hover:none){.card:hover{transform:translateY(0) rotate(var(--r,0deg));}}
+</style>
+</head>
+<body>
+
+<div id="app">
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a class="logo" href="#">
+        <div class="logo-mark">🧰</div>
+        <span class="logo-text">The <span class="hi">Toolbox</span></span>
+      </a>
+      <div class="header-search">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="searchDesk" type="text" placeholder="Search tools — AI, PDF, image…"/>
+      </div>
+      <div class="header-badge">
+        <span class="pulse"></span>
+        <span id="headerCount">29 free tools</span>
+      </div>
+    </div>
+    <div class="mobile-search">
+      <div class="mobile-search-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="searchMob" type="text" placeholder="Search tools — AI, PDF, image…"/>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="peg peg1"><div class="hook"></div><div class="chip">🤖</div></div>
+  <div class="peg peg2"><div class="hook"></div><div class="chip">📄</div></div>
+  <div class="peg peg3"><div class="hook"></div><div class="chip">🎨</div></div>
+  <div class="peg peg4"><div class="hook"></div><div class="chip">🔧</div></div>
+  <div class="container">
+    <div class="hero-eyebrow"><span class="tag">2026</span> Updated · free · no signup</div>
+    <h1>Every tool you<br/>need, <span class="u">on one board.</span></h1>
+    <p class="hero-sub">AI, PDF, image, writing and everyday utilities — hand-picked and organized like a real toolbox, so you grab the right one in seconds.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" id="statCats">5</span><span class="stat-label">Categories</span></div>
+      <div class="stat"><span class="stat-num" id="statTools">29</span><span class="stat-label">Tools listed</span></div>
+      <div class="stat"><span class="stat-num" id="statAI">8</span><span class="stat-label">AI tools</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="tab-wrap">
+  <div class="container">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-cat="all" onclick="filterCat('all',this)">✦ All <span class="tab-count" data-count="all">29</span></button>
+      <button class="tab" data-cat="ai" onclick="filterCat('ai',this)">🤖 AI <span class="tab-count" data-count="ai">8</span></button>
+      <button class="tab" data-cat="convert" onclick="filterCat('convert',this)">🔄 Convert <span class="tab-count" data-count="convert">3</span></button>
+      <button class="tab" data-cat="compress" onclick="filterCat('compress',this)">📦 Compress <span class="tab-count" data-count="compress">2</span></button>
+      <button class="tab" data-cat="edit" onclick="filterCat('edit',this)">✏️ Edit <span class="tab-count" data-count="edit">7</span></button>
+      <button class="tab" data-cat="utility" onclick="filterCat('utility',this)">🔧 Utility <span class="tab-count" data-count="utility">9</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="grid" id="grid">
+
+    <!-- ===== AI ===== -->
+    <div class="section-head ai">
+      <h2>🤖 AI Tools</h2><div class="section-line"></div><span class="section-tag ai">Trending 2026</span>
+    </div>
+
+    <div class="card ai is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">💬</div><span class="badge badge-hot">HOT</span></div>
+        <div class="card-info"><div class="card-title">AI Chatbot &amp; Assistant</div><div class="card-desc">Chat, write, research &amp; reason</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://claude.ai" target="_blank" rel="noopener"><span class="link-dot"></span>Claude<span class="link-arrow">↗</span></a>
+        <a href="https://chatgpt.com" target="_blank" rel="noopener"><span class="link-dot"></span>ChatGPT<span class="link-arrow">↗</span></a>
+        <a href="https://gemini.google.com" target="_blank" rel="noopener"><span class="link-dot"></span>Gemini<span class="link-arrow">↗</span></a>
+        <a href="https://www.perplexity.ai" target="_blank" rel="noopener"><span class="link-dot"></span>Perplexity<span class="link-arrow">↗</span></a>
+        <a href="https://copilot.microsoft.com" target="_blank" rel="noopener"><span class="link-dot"></span>Microsoft Copilot<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card ai is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🎨</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">AI Image Generator</div><div class="card-desc">Text to stunning images instantly</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.midjourney.com" target="_blank" rel="noopener"><span class="link-dot"></span>Midjourney<span class="link-arrow">↗</span></a>
+        <a href="https://ideogram.ai" target="_blank" rel="noopener"><span class="link-dot"></span>Ideogram<span class="link-arrow">↗</span></a>
+        <a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener"><span class="link-dot"></span>Adobe Firefly<span class="link-arrow">↗</span></a>
+        <a href="https://labs.google/fx/tools/image-fx" target="_blank" rel="noopener"><span class="link-dot"></span>Google ImageFX<span class="link-arrow">↗</span></a>
+        <a href="https://leonardo.ai" target="_blank" rel="noopener"><span class="link-dot"></span>Leonardo.Ai<span class="link-arrow">↗</span></a>
+        <a href="https://www.bing.com/images/create" target="_blank" rel="noopener"><span class="link-dot"></span>Bing Image Creator<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card ai" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🪄</div></div>
+        <div class="card-info"><div class="card-title">Background Remover</div><div class="card-desc">AI-powered instant BG removal</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.remove.bg" target="_blank" rel="noopener"><span class="link-dot"></span>Remove.bg<span class="link-arrow">↗</span></a>
+        <a href="https://www.photoroom.com" target="_blank" rel="noopener"><span class="link-dot"></span>PhotoRoom<span class="link-arrow">↗</span></a>
+        <a href="https://cleanup.pictures" target="_blank" rel="noopener"><span class="link-dot"></span>Cleanup.pictures<span class="link-arrow">↗</span></a>
+        <a href="https://www.adobe.com/express/feature/image/remove-background" target="_blank" rel="noopener"><span class="link-dot"></span>Adobe Express<span class="link-arrow">↗</span></a>
+        <a href="https://www.iloveimg.com/remove-background" target="_blank" rel="noopener"><span class="link-dot"></span>iLoveIMG<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card ai is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🎬</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">AI Video Generator</div><div class="card-desc">Text &amp; image to video clips</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://runwayml.com" target="_blank" rel="noopener"><span class="link-dot"></span>Runway<span class="link-arrow">↗</span></a>
+        <a href="https://pika.art" target="_blank" rel="noopener"><span class="link-dot"></span>Pika<span class="link-arrow">↗</span></a>
+        <a href="https://lumalabs.ai/dream-machine" target="_blank" rel="noopener"><span class="link-dot"></span>Luma Dream Machine<span class="link-arrow">↗</span></a>
+        <a href="https://klingai.com" target="_blank" rel="noopener"><span class="link-dot"></span>Kling AI<span class="link-arrow">↗</span></a>
+        <a href="https://chatgpt.com" target="_blank" rel="noopener"><span class="link-dot"></span>Sora (via ChatGPT)<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card ai" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🎙️</div></div>
+        <div class="card-info"><div class="card-title">AI Voice &amp; Music</div><div class="card-desc">Generate speech, songs &amp; audio</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://elevenlabs.io" target="_blank" rel="noopener"><span class="link-dot"></span>ElevenLabs<span class="link-arrow">↗</span></a>
+        <a href="https://suno.com" target="_blank" rel="noopener"><span class="link-dot"></span>Suno<span class="link-arrow">↗</span></a>
+        <a href="https://www.udio.com" target="_blank" rel="noopener"><span class="link-dot"></span>Udio<span class="link-arrow">↗</span></a>
+        <a href="https://murf.ai" target="_blank" rel="noopener"><span class="link-dot"></span>Murf AI<span class="link-arrow">↗</span></a>
+        <a href="https://speechify.com" target="_blank" rel="noopener"><span class="link-dot"></span>Speechify<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card ai" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">📊</div></div>
+        <div class="card-info"><div class="card-title">AI Presentation Maker</div><div class="card-desc">Prompt to full slide deck</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://gamma.app" target="_blank" rel="noopener"><span class="link-dot"></span>Gamma<span class="link-arrow">↗</span></a>
+        <a href="https://tome.app" target="_blank" rel="noopener"><span class="link-dot"></span>Tome<span class="link-arrow">↗</span></a>
+        <a href="https://www.canva.com/magic-design/" target="_blank" rel="noopener"><span class="link-dot"></span>Canva Magic Design<span class="link-arrow">↗</span></a>
+        <a href="https://www.beautiful.ai" target="_blank" rel="noopener"><span class="link-dot"></span>Beautiful.ai<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card ai" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🧠</div></div>
+        <div class="card-info"><div class="card-title">AI Resume Builder</div><div class="card-desc">Tailor a resume with AI</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.kickresume.com" target="_blank" rel="noopener"><span class="link-dot"></span>Kickresume<span class="link-arrow">↗</span></a>
+        <a href="https://www.tealhq.com" target="_blank" rel="noopener"><span class="link-dot"></span>Teal<span class="link-arrow">↗</span></a>
+        <a href="https://www.rezi.ai" target="_blank" rel="noopener"><span class="link-dot"></span>Rezi<span class="link-arrow">↗</span></a>
+        <a href="https://enhancv.com" target="_blank" rel="noopener"><span class="link-dot"></span>Enhancv<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card ai is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">💻</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">AI Code Assistant</div><div class="card-desc">Build &amp; ship code faster</div></div>
+        <span class="card-tag tag-ai">AI</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://github.com/features/copilot" target="_blank" rel="noopener"><span class="link-dot"></span>GitHub Copilot<span class="link-arrow">↗</span></a>
+        <a href="https://cursor.com" target="_blank" rel="noopener"><span class="link-dot"></span>Cursor<span class="link-arrow">↗</span></a>
+        <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener"><span class="link-dot"></span>Claude Code<span class="link-arrow">↗</span></a>
+        <a href="https://replit.com" target="_blank" rel="noopener"><span class="link-dot"></span>Replit AI<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <!-- ===== CONVERT ===== -->
+    <div class="section-head convert">
+      <h2>🔄 Convert Tools</h2><div class="section-line"></div><span class="section-tag convert">Convert</span>
+    </div>
+
+    <div class="card convert" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🖼️</div></div>
+        <div class="card-info"><div class="card-title">JPG to PNG</div><div class="card-desc">Convert images, zero quality loss</div></div>
+        <span class="card-tag tag-convert">Convert</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.ilovepdf.com" target="_blank" rel="noopener"><span class="link-dot"></span>iLovePDF<span class="link-arrow">↗</span></a>
+        <a href="https://cloudconvert.com" target="_blank" rel="noopener"><span class="link-dot"></span>CloudConvert<span class="link-arrow">↗</span></a>
+        <a href="https://convertio.co" target="_blank" rel="noopener"><span class="link-dot"></span>Convertio<span class="link-arrow">↗</span></a>
+        <a href="https://www.freeconvert.com" target="_blank" rel="noopener"><span class="link-dot"></span>FreeConvert<span class="link-arrow">↗</span></a>
+        <a href="https://www.iloveimg.com" target="_blank" rel="noopener"><span class="link-dot"></span>iLoveIMG<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card convert" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">📄</div></div>
+        <div class="card-info"><div class="card-title">JPG to PDF</div><div class="card-desc">Convert images to PDF in seconds</div></div>
+        <span class="card-tag tag-convert">Convert</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.ilovepdf.com" target="_blank" rel="noopener"><span class="link-dot"></span>iLovePDF<span class="link-arrow">↗</span></a>
+        <a href="https://smallpdf.com" target="_blank" rel="noopener"><span class="link-dot"></span>SmallPDF<span class="link-arrow">↗</span></a>
+        <a href="https://www.pdf24.org" target="_blank" rel="noopener"><span class="link-dot"></span>PDF24<span class="link-arrow">↗</span></a>
+        <a href="https://www.sejda.com" target="_blank" rel="noopener"><span class="link-dot"></span>Sejda<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card convert" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">📝</div></div>
+        <div class="card-info"><div class="card-title">PDF to Word</div><div class="card-desc">Convert PDF to editable .docx</div></div>
+        <span class="card-tag tag-convert">Convert</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.ilovepdf.com" target="_blank" rel="noopener"><span class="link-dot"></span>iLovePDF<span class="link-arrow">↗</span></a>
+        <a href="https://smallpdf.com" target="_blank" rel="noopener"><span class="link-dot"></span>SmallPDF<span class="link-arrow">↗</span></a>
+        <a href="https://www.adobe.com/acrobat" target="_blank" rel="noopener"><span class="link-dot"></span>Adobe Acrobat<span class="link-arrow">↗</span></a>
+        <a href="https://www.sejda.com" target="_blank" rel="noopener"><span class="link-dot"></span>Sejda<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <!-- ===== COMPRESS ===== -->
+    <div class="section-head compress">
+      <h2>📦 Compress Tools</h2><div class="section-line"></div><span class="section-tag compress">Compress</span>
+    </div>
+
+    <div class="card compress" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">📦</div></div>
+        <div class="card-info"><div class="card-title">PDF Compressor</div><div class="card-desc">Shrink PDF files, keep quality</div></div>
+        <span class="card-tag tag-compress">Compress</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.ilovepdf.com" target="_blank" rel="noopener"><span class="link-dot"></span>iLovePDF<span class="link-arrow">↗</span></a>
+        <a href="https://smallpdf.com" target="_blank" rel="noopener"><span class="link-dot"></span>SmallPDF<span class="link-arrow">↗</span></a>
+        <a href="https://www.pdf24.org" target="_blank" rel="noopener"><span class="link-dot"></span>PDF24<span class="link-arrow">↗</span></a>
+        <a href="https://www.sejda.com" target="_blank" rel="noopener"><span class="link-dot"></span>Sejda<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card compress" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🗜️</div></div>
+        <div class="card-info"><div class="card-title">Image Compressor</div><div class="card-desc">Compress PNG/JPG without loss</div></div>
+        <span class="card-tag tag-compress">Compress</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://tinypng.com" target="_blank" rel="noopener"><span class="link-dot"></span>TinyPNG<span class="link-arrow">↗</span></a>
+        <a href="https://www.iloveimg.com" target="_blank" rel="noopener"><span class="link-dot"></span>iLoveIMG<span class="link-arrow">↗</span></a>
+        <a href="https://squoosh.app" target="_blank" rel="noopener"><span class="link-dot"></span>Squoosh<span class="link-arrow">↗</span></a>
+        <a href="https://www.freeconvert.com" target="_blank" rel="noopener"><span class="link-dot"></span>FreeConvert<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <!-- ===== EDIT ===== -->
+    <div class="section-head edit">
+      <h2>✏️ Edit Tools</h2><div class="section-line"></div><span class="section-tag edit">Edit</span>
+    </div>
+
+    <div class="card edit" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">✂️</div></div>
+        <div class="card-info"><div class="card-title">Image Resizer</div><div class="card-desc">Resize to any pixel dimension</div></div>
+        <span class="card-tag tag-edit">Edit</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.iloveimg.com" target="_blank" rel="noopener"><span class="link-dot"></span>iLoveIMG<span class="link-arrow">↗</span></a>
+        <a href="https://www.canva.com" target="_blank" rel="noopener"><span class="link-dot"></span>Canva<span class="link-arrow">↗</span></a>
+        <a href="https://www.photopea.com" target="_blank" rel="noopener"><span class="link-dot"></span>Photopea<span class="link-arrow">↗</span></a>
+        <a href="https://www.befunky.com" target="_blank" rel="noopener"><span class="link-dot"></span>BeFunky<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card edit" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">📋</div></div>
+        <div class="card-info"><div class="card-title">Resume Builder</div><div class="card-desc">Create professional resumes free</div></div>
+        <span class="card-tag tag-edit">Edit</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.canva.com" target="_blank" rel="noopener"><span class="link-dot"></span>Canva<span class="link-arrow">↗</span></a>
+        <a href="https://novoresume.com" target="_blank" rel="noopener"><span class="link-dot"></span>NovoResume<span class="link-arrow">↗</span></a>
+        <a href="https://www.myperfectresume.com" target="_blank" rel="noopener"><span class="link-dot"></span>MyPerfectResume<span class="link-arrow">↗</span></a>
+        <a href="https://resumegenius.com" target="_blank" rel="noopener"><span class="link-dot"></span>Resume Genius<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card edit" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">✅</div></div>
+        <div class="card-info"><div class="card-title">Grammar Checker</div><div class="card-desc">Fix grammar &amp; spelling errors</div></div>
+        <span class="card-tag tag-edit">Edit</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.grammarly.com" target="_blank" rel="noopener"><span class="link-dot"></span>Grammarly<span class="link-arrow">↗</span></a>
+        <a href="https://quillbot.com" target="_blank" rel="noopener"><span class="link-dot"></span>QuillBot<span class="link-arrow">↗</span></a>
+        <a href="https://hemingwayapp.com" target="_blank" rel="noopener"><span class="link-dot"></span>Hemingway<span class="link-arrow">↗</span></a>
+        <a href="https://languagetool.org" target="_blank" rel="noopener"><span class="link-dot"></span>LanguageTool<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card edit" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🔍</div></div>
+        <div class="card-info"><div class="card-title">Plagiarism Checker</div><div class="card-desc">Detect duplicate &amp; copied content</div></div>
+        <span class="card-tag tag-edit">Edit</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.grammarly.com" target="_blank" rel="noopener"><span class="link-dot"></span>Grammarly<span class="link-arrow">↗</span></a>
+        <a href="https://www.quetext.com" target="_blank" rel="noopener"><span class="link-dot"></span>Quetext<span class="link-arrow">↗</span></a>
+        <a href="https://www.duplichecker.com" target="_blank" rel="noopener"><span class="link-dot"></span>DupliChecker<span class="link-arrow">↗</span></a>
+        <a href="https://www.copyscape.com" target="_blank" rel="noopener"><span class="link-dot"></span>Copyscape<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card edit is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🔢</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">Word Counter</div><div class="card-desc">Words, chars &amp; reading time</div></div>
+        <span class="card-tag tag-edit">Edit</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://wordcounter.net" target="_blank" rel="noopener"><span class="link-dot"></span>WordCounter.net<span class="link-arrow">↗</span></a>
+        <a href="https://www.charactercountonline.com" target="_blank" rel="noopener"><span class="link-dot"></span>CharacterCount<span class="link-arrow">↗</span></a>
+        <a href="https://countwordsfree.com" target="_blank" rel="noopener"><span class="link-dot"></span>CountWordsFree<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card edit is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🧾</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">Invoice Generator</div><div class="card-desc">Professional invoices, free</div></div>
+        <span class="card-tag tag-edit">Edit</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.invoicegenerator.com" target="_blank" rel="noopener"><span class="link-dot"></span>InvoiceGenerator<span class="link-arrow">↗</span></a>
+        <a href="https://www.zoho.com/invoice/free-invoice-generator.html" target="_blank" rel="noopener"><span class="link-dot"></span>Zoho Invoice<span class="link-arrow">↗</span></a>
+        <a href="https://www.wave.com/free-invoice-templates/" target="_blank" rel="noopener"><span class="link-dot"></span>Wave<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card edit is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🎨</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">Color Picker &amp; Palette</div><div class="card-desc">Pick &amp; generate color palettes</div></div>
+        <span class="card-tag tag-edit">Edit</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://coolors.co" target="_blank" rel="noopener"><span class="link-dot"></span>Coolors<span class="link-arrow">↗</span></a>
+        <a href="https://color.adobe.com" target="_blank" rel="noopener"><span class="link-dot"></span>Adobe Color<span class="link-arrow">↗</span></a>
+        <a href="https://www.colorhunt.co" target="_blank" rel="noopener"><span class="link-dot"></span>ColorHunt<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <!-- ===== UTILITY ===== -->
+    <div class="section-head utility">
+      <h2>🔧 Utility Tools</h2><div class="section-line"></div><span class="section-tag utility">Utility</span>
+    </div>
+
+    <div class="card utility is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">📱</div><span class="badge badge-hot">HOT</span></div>
+        <div class="card-info"><div class="card-title">QR Code Generator</div><div class="card-desc">Create custom QR codes for any link</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.qr-code-generator.com" target="_blank" rel="noopener"><span class="link-dot"></span>QR Code Generator<span class="link-arrow">↗</span></a>
+        <a href="https://www.canva.com/features/qr-code-generator/" target="_blank" rel="noopener"><span class="link-dot"></span>Canva QR<span class="link-arrow">↗</span></a>
+        <a href="https://www.qrcodemonkey.com" target="_blank" rel="noopener"><span class="link-dot"></span>QR Code Monkey<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🎥</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">Screen Recorder</div><div class="card-desc">Record your screen for free online</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://screenrec.com" target="_blank" rel="noopener"><span class="link-dot"></span>ScreenRec<span class="link-arrow">↗</span></a>
+        <a href="https://www.loom.com" target="_blank" rel="noopener"><span class="link-dot"></span>Loom<span class="link-arrow">↗</span></a>
+        <a href="https://clipchamp.com" target="_blank" rel="noopener"><span class="link-dot"></span>Clipchamp<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">📅</div><span class="badge badge-new">NEW</span></div>
+        <div class="card-info"><div class="card-title">Age / Date Calculator</div><div class="card-desc">Calculate age &amp; date difference</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.calculator.net/age-calculator.html" target="_blank" rel="noopener"><span class="link-dot"></span>Calculator.net<span class="link-arrow">↗</span></a>
+        <a href="https://www.timeanddate.com/date/birthday.html" target="_blank" rel="noopener"><span class="link-dot"></span>TimeAndDate<span class="link-arrow">↗</span></a>
+        <a href="https://www.omnicalculator.com/everyday-life/age" target="_blank" rel="noopener"><span class="link-dot"></span>Omni Calculator<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">▶️</div></div>
+        <div class="card-info"><div class="card-title">YT Thumbnail Downloader</div><div class="card-desc">Download YouTube thumbnails in HD</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://ytthumb.com" target="_blank" rel="noopener"><span class="link-dot"></span>YTThumb<span class="link-arrow">↗</span></a>
+        <a href="https://www.ytlarge.com" target="_blank" rel="noopener"><span class="link-dot"></span>YTLarge<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🧮</div></div>
+        <div class="card-info"><div class="card-title">Online Calculator</div><div class="card-desc">Math, scientific &amp; graphing tools</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.desmos.com" target="_blank" rel="noopener"><span class="link-dot"></span>Desmos<span class="link-arrow">↗</span></a>
+        <a href="https://www.calculator.net" target="_blank" rel="noopener"><span class="link-dot"></span>Calculator.net<span class="link-arrow">↗</span></a>
+        <a href="https://www.wolframalpha.com" target="_blank" rel="noopener"><span class="link-dot"></span>WolframAlpha<span class="link-arrow">↗</span></a>
+        <a href="https://www.symbolab.com" target="_blank" rel="noopener"><span class="link-dot"></span>Symbolab<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">⚖️</div></div>
+        <div class="card-info"><div class="card-title">Unit Converter</div><div class="card-desc">Convert any unit of measurement</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.unitconverters.net" target="_blank" rel="noopener"><span class="link-dot"></span>UnitConverters<span class="link-arrow">↗</span></a>
+        <a href="https://www.metric-conversions.org" target="_blank" rel="noopener"><span class="link-dot"></span>Metric Conversions<span class="link-arrow">↗</span></a>
+        <a href="https://www.rapidtables.com" target="_blank" rel="noopener"><span class="link-dot"></span>RapidTables<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🔐</div></div>
+        <div class="card-info"><div class="card-title">Password Generator</div><div class="card-desc">Generate strong secure passwords</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://passwordsgenerator.net" target="_blank" rel="noopener"><span class="link-dot"></span>PasswordsGenerator<span class="link-arrow">↗</span></a>
+        <a href="https://www.bitwarden.com/password-generator" target="_blank" rel="noopener"><span class="link-dot"></span>Bitwarden<span class="link-arrow">↗</span></a>
+        <a href="https://randomkeygen.com" target="_blank" rel="noopener"><span class="link-dot"></span>Random Keygen<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">⬇️</div></div>
+        <div class="card-info"><div class="card-title">Video Downloader</div><div class="card-desc">Save clips from supported sites</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://www.4kdownload.com" target="_blank" rel="noopener"><span class="link-dot"></span>4K Download<span class="link-arrow">↗</span></a>
+        <a href="https://www.clipconverter.cc" target="_blank" rel="noopener"><span class="link-dot"></span>ClipConverter<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="card utility is-new" onclick="toggleCard(this)">
+      <div class="peg-hole"></div>
+      <div class="card-top">
+        <div class="card-icon-wrap"><div class="card-icon">🎵</div><span class="badge badge-hot">HOT</span></div>
+        <div class="card-info"><div class="card-title">Audio Extractor</div><div class="card-desc">Pull audio tracks from video files</div></div>
+        <span class="card-tag tag-utility">Utility</span><div class="card-arrow">▼</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a href="https://cloudconvert.com/mp4-to-mp3" target="_blank" rel="noopener"><span class="link-dot"></span>CloudConvert<span class="link-arrow">↗</span></a>
+        <a href="https://www.freeconvert.com/video-to-mp3" target="_blank" rel="noopener"><span class="link-dot"></span>FreeConvert<span class="link-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="empty" id="empty">
+      <div class="empty-icon">🔍</div>
+      <p>No tools found. Try a different keyword.</p>
+    </div>
+
+  </div>
+
+  <div class="share-section">
+    <div class="share-label">🔗 Spread the word</div>
+    <h2 class="share-title">Share the toolbox</h2>
+    <p class="share-sub">Help your friends find 29+ free tools — no signup, no cost, forever.</p>
+    <div class="share-total"><span class="fire">🔥</span> <span id="totalCount">362</span>&nbsp;people shared this</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="doShare('whatsapp','wa')">
+        <div class="share-btn-icon">💬</div><span class="share-btn-name">WhatsApp</span><span class="share-cnt" id="cnt-wa">128</span>
+      </button>
+      <button class="share-btn" onclick="doShare('facebook','fb')">
+        <div class="share-btn-icon">📘</div><span class="share-btn-name">Facebook</span><span class="share-cnt" id="cnt-fb">95</span>
+      </button>
+      <button class="share-btn" onclick="doShare('twitter','tw')">
+        <div class="share-btn-icon">𝕏</div><span class="share-btn-name">X / Twitter</span><span class="share-cnt" id="cnt-tw">33</span>
+      </button>
+      <button class="share-btn" onclick="doShare('reddit','rd')">
+        <div class="share-btn-icon">👽</div><span class="share-btn-name">Reddit</span><span class="share-cnt" id="cnt-rd">19</span>
+      </button>
+      <button class="share-btn" onclick="doShare('linkedin','li')">
+        <div class="share-btn-icon">💼</div><span class="share-btn-name">LinkedIn</span><span class="share-cnt" id="cnt-li">13</span>
+      </button>
+      <button class="share-btn" onclick="doShare('copy','cp')">
+        <div class="share-btn-icon">🔗</div><span class="share-btn-name">Copy link</span><span class="share-cnt" id="cnt-cp">74</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <strong>The Toolbox</strong> &nbsp;·&nbsp; © 2026 &nbsp;·&nbsp; Made for everyone who just needs the tool, not another signup
+  </div>
+</footer>
+
+</div>
+
+<script>
+// ===== dynamic counts (fixes any tally drift) =====
+function recalcCounts(){
+  const cats=['ai','convert','compress','edit','utility'];
+  let total=0;
+  cats.forEach(c=>{
+    const n=document.querySelectorAll('.card.'+c).length;
+    total+=n;
+    document.querySelectorAll('.tab-count[data-count="'+c+'"]').forEach(el=>el.textContent=n);
+  });
+  document.querySelectorAll('.tab-count[data-count="all"]').forEach(el=>el.textContent=total);
+  document.getElementById('headerCount').textContent=total+' free tools';
+  document.getElementById('statTools').textContent=total;
+  document.getElementById('statCats').textContent=cats.length;
+  document.getElementById('statAI').textContent=document.querySelectorAll('.card.ai').length;
+}
+recalcCounts();
+
+// ===== scroll reveal =====
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'), i*45);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.08});
+document.querySelectorAll('.card').forEach(c=>io.observe(c));
+
+// ===== toggle card =====
+function toggleCard(card){
+  const isOpen=card.classList.contains('open');
+  document.querySelectorAll('.card.open').forEach(c=>c.classList.remove('open'));
+  if(!isOpen) card.classList.add('open');
+}
+
+// ===== category filter =====
+function filterCat(cat,btn){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.section-head').forEach(h=>{
+    h.style.display=(cat==='all'||h.classList.contains(cat))?'':'none';
+  });
+  document.querySelectorAll('.card').forEach(c=>{
+    const show=cat==='all'||c.classList.contains(cat);
+    c.style.display=show?'':'none';
+    if(show&&!c.classList.contains('visible')) c.classList.add('visible');
+  });
+}
+
+// ===== search =====
+function doSearch(q){
+  q=q.toLowerCase();
+  let visible=0;
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.cat==='all'));
+  document.querySelectorAll('.section-head').forEach(h=>h.style.display=q?'none':'');
+  document.querySelectorAll('.card').forEach(c=>{
+    const match=c.innerText.toLowerCase().includes(q);
+    c.style.display=match?'':'none';
+    if(match) visible++;
+  });
+  document.getElementById('empty').classList.toggle('show',visible===0&&q!=='');
+}
+document.getElementById('searchDesk').addEventListener('input',e=>doSearch(e.target.value));
+document.getElementById('searchMob').addEventListener('input',e=>doSearch(e.target.value));
+
+// ===== share counters =====
+const defaultC={wa:128,fb:95,tw:33,rd:19,li:13,cp:74};
+let counts;
+try{counts=JSON.parse(localStorage.getItem('toolbox_shares'))||{...defaultC};}catch(e){counts={...defaultC};}
+
+function updateCounts(){
+  for(const[k,v] of Object.entries(counts)){
+    const el=document.getElementById('cnt-'+k);
+    if(el) el.textContent=v>=1000?(v/1000).toFixed(1)+'k':v;
+  }
+  const total=Object.values(counts).reduce((a,b)=>a+b,0);
+  document.getElementById('totalCount').textContent=total>=1000?(total/1000).toFixed(1)+'k':total;
+}
+updateCounts();
+
+const shareUrls={
+  whatsapp:u=>`https://wa.me/?text=${encodeURIComponent('Free online tools hub! '+u)}`,
+  facebook:u=>`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(u)}`,
+  twitter:u=>`https://twitter.com/intent/tweet?url=${encodeURIComponent(u)}&text=${encodeURIComponent('Awesome free online toolbox!')}`,
+  reddit:u=>`https://reddit.com/submit?url=${encodeURIComponent(u)}&title=${encodeURIComponent('The Toolbox — free online tools')}`,
+  linkedin:u=>`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(u)}`
+};
+
+function doShare(platform,key){
+  const btn=event.currentTarget;
+  btn.classList.remove('popping');
+  void btn.offsetWidth;
+  btn.classList.add('popping');
+  setTimeout(()=>btn.classList.remove('popping'),350);
+
+  counts[key]=(counts[key]||0)+1;
+  try{localStorage.setItem('toolbox_shares',JSON.stringify(counts));}catch(e){}
+  updateCounts();
+
+  const el=document.getElementById('cnt-'+key);
+  if(el){el.style.color='#FF8D5C';el.style.transform='scale(1.35)';setTimeout(()=>{el.style.color='';el.style.transform='';},500);}
+
+  const pageUrl=window.location.href;
+  if(platform==='copy'){
+    navigator.clipboard?.writeText(pageUrl).then(()=>alert('Link copied to clipboard!'));
+    return;
+  }
+  const url=shareUrls[platform]?.(pageUrl);
+  if(url) window.open(url,'_blank','width=600,height=500');
+}
+</script>
+</body>
+</html>
